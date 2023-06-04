@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+a {
+  color: none;
+}
+
+.nav {
+  @apply w-screen md:h-[5rem] backdrop-blur-md bg-white md:bg-[#00000049] fixed top-0 left-0 flex justify-between items-center px-[4rem] text-white text-xl z-30 h-[3.5rem];
+}
+.InnerNav {
+  @apply md:w-[80%] md:h-full flex flex-col md:static md:flex-row justify-between md:items-center absolute left-0  z-[-20] w-screen h-screen md:text-white md:py-0 pt-[4rem] pb-[3rem] md:bg-transparent bg-white text-black transition-all duration-700;
+}
+.menu {
+  @apply absolute right-8 top-2 px-[2rem] py-[0.5rem] hover:opacity-75 bg-slate-700 rounded-md md:hidden transition-all duration-700;
+}
+.NavLinks {
+  @apply md:hover:scale-110 hover:text-[#0000777] transition-all duration-500;
+}
+.logo {
+  @apply w-[3rem] h-[3rem] cursor-pointer;
+}
+.body {
+  @apply w-screen h-screen;
+}
+.TopSection {
+  @apply w-full h-screen;
+}
+.MySwipper {
+  @apply w-full h-full;
+}
+.swipes {
+  @apply w-full h-full;
+}
+
+.SliderImage {
+  @apply w-full h-full object-cover brightness-[60%];
+}
+.descripo {
+  @apply absolute top-0 text-center w-full h-full flex flex-col justify-center items-center text-white;
+}
+.swiperNavLeft,
+.swiperNavRight {
+  @apply absolute translate-y-[-500%] w-[50px] h-[70px] z-[1] cursor-pointer bg-no-repeat bg-cover bg-center hover:bg-[#00000017] transition-all duration-500 rounded-sm hidden md:block;
+}
+
+.SecSection {
+  @apply py-[4rem] w-screen;
+}
+.SatisfactionTab {
+  @apply w-full h-full flex pb-[2rem] flex-col md:flex-row md:px-[4rem] px-[1rem] text-justify items-center justify-between gap-y-[4rem];
+}
+.leftTab,
+.rightTab {
+  @apply md:w-[45%] md:h-[30rem] flex flex-col justify-center w-[90%] h-[30rem];
+}
+.leftTab {
+  @apply bg-[url('./assets/HomePage/shake.webp')] bg-cover rounded-md bg-center md:mb-0 mb-[2rem];
+}
+.ThirdSection {
+  @apply w-screen py-[3rem] bg-[#f6f7f9];
+}
+.Rates {
+  @apply w-full h-auto flex flex-col;
+}
+.topRateTab {
+  @apply w-full h-[10rem] text-center;
+}
+.bottomRateTab {
+  @apply w-full h-full pb-[2rem] px-[1rem] flex flex-col md:flex-row justify-between items-center gap-[2rem];
+}
+
+.box {
+  @apply w-[25rem] h-auto p-[4rem] rounded-lg drop-shadow-xl bg-white flex flex-col gap-y-[2rem] items-center text-center;
+}
+.rateIcons {
+  @apply w-[5rem] h-[5rem] object-contain;
+}
+.bigText {
+  @apply text-[#60697b] text-xl font-bold;
+}
+.bigTextTwo {
+  @apply text-[#60697b] text-xl;
+}
+.bigTextThree {
+  @apply text-[#aab0bc] text-xl;
+}
+.bigTextFour {
+  @apply text-[#60697b]  text-2xl md:text-3xl font-bold;
+}
+.smalls {
+  @apply text-lg text-[#aab0bc];
+}
+.leftTabSec {
+  @apply bg-[url('./assets/HomePage/wealth_management.webp')];
+}
+.SatisfactTop {
+  @apply w-full  flex flex-col lg:flex-row px-[3rem] justify-between pt-[4rem] text-center gap-y-[2rem];
+}
+.numbers {
+  @apply w-full flex md:flex-row flex-col justify-between text-center gap-y-[2rem];
+}
+.TestimonySection {
+  @apply w-full h-[50rem] lg:h-[40rem] px-[1rem] md:px-[4rem] flex lg:flex-row flex-col mt-[4rem];
+}
+.Testmony {
+  @apply lg:w-[50%] w-[100%] lg:h-[100%] h-[50%] bg-[url('./assets/HomePage/happy-testimony.webp')] bg-cover bg-center lg:rounded-l-lg rounded-t-lg;
+}
+.TestimonySwipper {
+  @apply lg:w-[50%] w-[100%] lg:h-[100%] h-[50%] bg-white lg:rounded-r-lg rounded-b-lg drop-shadow-xl;
+}
+.testimonyText {
+  @apply w-full h-full flex flex-col px-[1rem] md:px-[4rem] gap-y-[2rem] text-center justify-center;
+}
+.footer {
+  @apply w-full p-[1rem] md:p-[4rem] text-white bg-[#21262C] text-justify;
+}
+.footerTop {
+  @apply w-full flex flex-col gap-y-[2rem] md:flex-row justify-between mb-[2rem];
+}
+.ftChild {
+  @apply md:w-[30%] w-full;
+}
+.ul {
+  @apply cursor-pointer space-y-[1rem];
+}
+.footerBottom {
+  @apply w-full flex justify-center;
+}
