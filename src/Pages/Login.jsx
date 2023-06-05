@@ -22,10 +22,10 @@ export const LoginPage = () => {
     <>
       <main className="">
         <section className="">
-          <div className="flex flex-col mt-[80px] mb-10  items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+          <div className="flex flex-col h-auto     items-center justify-center px-6 py-[5rem] mx-auto md:min-h-screen  bg-gray-800 dark:bg-white">
             <a
               href="#"
-              className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
+              className="flex items-center mb-6 text-2xl font-semibold dark:text-gray-800  text-white"
             >
               <img className="w-8 h-8 mr-2" src={logo} alt="logo" />
               Finance
@@ -139,7 +139,7 @@ export const LoginPage = () => {
                     Sign in
                   </button>
                   <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                    Don’t have an account yet?{" "}
+                    Don’t have an account yet?
                     <Link
                       to="/signup"
                       className="font-medium text-primary-600 hover:underline dark:text-primary-500"

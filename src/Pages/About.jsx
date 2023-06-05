@@ -1,8 +1,11 @@
 import React from "react";
+import { TopSectionAbout } from "./AboutPageSection.jsx/TopSectionAbout";
+import { SecScetionAbout } from "./AboutPageSection.jsx/SecSectionAbout";
 export const About = () => {
   return (
     <>
-      <h1>this is the about page</h1>
+      <TopSectionAbout />
+      <SecScetionAbout />
     </>
   );
 };

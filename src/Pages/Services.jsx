@@ -1,8 +1,9 @@
 import React from "react";
+import { TopSectionService } from "./ServicePageSection/TopSectionService";
 export const ServicePage = () => {
   return (
     <>
-      <h1>this is the service page</h1>
+      <TopSectionService />
     </>
   );
 };

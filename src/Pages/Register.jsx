@@ -33,15 +33,15 @@ export const RegisterPage = () => {
     <>
       <main className="">
         <section className="">
-          <div className="flex flex-col mt-[80px] md:mt-[100px] mb-10  items-center justify-center px-6 py-8 mx-auto md:min-h-screen lg:py-0">
+          <div className="flex flex-col h-auto   items-center justify-center px-6 py-[5rem] mx-auto md:min-h-screen  bg-gray-800 dark:bg-white">
             <a
               href="#"
-              className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
+              className="flex items-center mb-6 text-2xl font-semibold dark:text-gray-800  text-white"
             >
-              <img className="w-8 h-8 mr-2" src={logo} alt="logo" />
+              <img className="w-8 h-8 mr-2 " src={logo} alt="logo" />
               Finance
             </a>
-            <h1 className="text-xl mb-5 text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+            <h1 className="text-xl mb-5 text-center font-bold leading-tight tracking-tight  md:text-2xl dark:text-gray-800  text-white">
               Register Account
               <span className="block font-medium text-sm mt-1">
                 Get your free Finance account now.
@@ -265,7 +265,7 @@ export const RegisterPage = () => {
                   <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                     Already have an account?{" "}
                     <Link
-                      to="/signup"
+                      to="/login"
                       className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                     >
                       Login

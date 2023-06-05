@@ -29,8 +29,8 @@ function App() {
             <Link className="NavLinks" to="/profile">
               Profile
             </Link>
-            <Link className="NavLinks" to="/contact">
-              Contact Me
+            <Link className="NavLinks" to="/services">
+              Services
             </Link>
             <Link className="NavLinks" to="/signup">
               SignUp
@@ -46,7 +46,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<About />} />
-          <Route path="/contact" element={<ServicePage />} />
+          <Route path="/services" element={<ServicePage />} />
           <Route path="/signup" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/*" element={<ErrorPage />} />
