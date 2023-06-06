@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/navbar/logo_at_nav_bar.png";
-
+import { motion } from "framer-motion";
 export const RegisterPage = () => {
   const [user, setUser] = useState({
     email: "",
@@ -30,7 +30,7 @@ export const RegisterPage = () => {
   };
 
   return (
-    <>
+    <motion.div>
       <main className="">
         <section className="">
           <div className="flex flex-col h-auto   items-center justify-center px-6 py-[5rem] mx-auto md:min-h-screen  bg-gray-800 dark:bg-white">
@@ -277,6 +277,6 @@ export const RegisterPage = () => {
           </div>
         </section>
       </main>
-    </>
+    </motion.div>
   );
 };

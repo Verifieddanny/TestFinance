@@ -1,18 +1,17 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { About } from "./Pages/About";
-import { Home } from "./Pages/Home";
-import { LoginPage } from "./Pages/Login";
-import { RegisterPage } from "./Pages/Register";
-import { ServicePage } from "./Pages/Services";
-import { ErrorPage } from "./Pages/ErrorPage";
-
+import { BrowserRouter as Router, Link, useLocation } from "react-router-dom";
+import { FooterComponent } from "./Pages/Footer";
 import logo from "./assets/navbar/logo_at_nav_bar.png";
+import ScrollToTop from "./components/ScrollToTop";
+import AnimatedRoutes from "./components/AnimatedRoutes";
+import { AnimatePresence } from "framer-motion";
 function App() {
   const [open, setOpen] = useState(false);
+
   return (
-    <>
-      <Router>
+    <AnimatePresence>
+      <Router location={location} key={location.pathname}>
+        <ScrollToTop />
         <nav className="nav">
           <img src={logo} className="logo" />
           <div
@@ -43,16 +42,12 @@ function App() {
             {open ? "Close" : "Menu"}
           </button>
         </nav>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<About />} />
-          <Route path="/services" element={<ServicePage />} />
-          <Route path="/signup" element={<RegisterPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/*" element={<ErrorPage />} />
-        </Routes>
+
+        <AnimatedRoutes />
+
+        <FooterComponent />
       </Router>
-    </>
+    </AnimatePresence>
   );
 }
 
