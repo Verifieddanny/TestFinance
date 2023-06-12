@@ -84,7 +84,7 @@ a {
 }
 
 .SecSection {
-  @apply py-[4rem] w-screen  bg-white dark:bg-gray-800 dark:text-white  text-gray-800 text-justify;
+  @apply py-[4rem] h-auto w-screen  bg-white dark:bg-gray-800 dark:text-white  text-gray-800 text-justify;
 }
 .SatisfactionTab {
   @apply w-full h-full flex pb-[2rem] flex-col md:flex-row md:px-[4rem] px-[1rem] text-justify items-center justify-between gap-y-[4rem];
