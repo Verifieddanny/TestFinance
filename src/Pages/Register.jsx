@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/navbar/logo_at_nav_bar.png";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 
 export const RegisterPage = ({ setNavon }) => {
   useEffect(() => {

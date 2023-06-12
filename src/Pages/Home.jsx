@@ -5,20 +5,18 @@ import { ThirdSection } from "./HomePageSections/ThirdSection";
 import { FourthSection } from "./HomePageSections/FourthSection";
 import { Testimony } from "./HomePageSections/Testimony";
 
-import { motion } from "framer-motion";
-
 export const Home = ({ setNavon }) => {
   useEffect(() => {
     setNavon(true);
   }, []);
 
   return (
-    <motion.div>
+    <div>
       <TopSection />
       <SecScetion />
       <ThirdSection />
       <FourthSection />
       <Testimony />
-    </motion.div>
+    </div>
   );
 };

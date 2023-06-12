@@ -3,8 +3,6 @@ import logo from "../assets/navbar/logo_at_nav_bar.png";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { motion } from "framer-motion";
-
 import { useNavigate } from "react-router-dom";
 
 export const LoginPage = ({ setNavon }) => {
