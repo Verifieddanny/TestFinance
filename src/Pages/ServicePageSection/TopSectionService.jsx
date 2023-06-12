@@ -1,12 +1,10 @@
 import React from "react";
-import pic1 from "../../assets/ServicePage/wealth_management.webp";
-import pic2 from "../../assets/ServicePage/crypto-trading.webp";
-import pic3 from "../../assets/ServicePage/real-estate.webp";
+
 export const TopSectionService = () => {
   return (
     <>
       <section className="TopSection flex justify-center relative">
-        <img className="SliderImage" src={pic1} />
+        <div className="SliderCont SliderContFirst"></div>
         <div className="descripo">
           <h2 className="text-5xl mb-[2rem]">Forex Trading</h2>
           <h5 className="text-xl">
@@ -34,7 +32,7 @@ export const TopSectionService = () => {
         </p>
       </section>
       <section className="TopSection flex justify-center relative">
-        <img className="SliderImage" src={pic2} />
+        <div className="SliderCont SliderContSecond"></div>
         <div className="descripo">
           <h2 className="text-5xl mb-[2rem]">Crypto Trading</h2>
           <h5 className="text-xl">Crypto trading made simple for everyone.</h5>
@@ -66,7 +64,7 @@ export const TopSectionService = () => {
         </p>
       </section>
       <section className="TopSection flex justify-center relative">
-        <img className="SliderImage" src={pic3} />
+        <div className="SliderCont SliderContThird"></div>
         <div className="descripo">
           <h2 className="text-5xl mb-[2rem]">Real Estate</h2>
           <h5 className="text-xl">

@@ -21,20 +21,24 @@ a {
 }
 
 .nav {
-  @apply w-screen md:h-[4rem] backdrop-blur-md bg-white md:bg-[#00000049] fixed top-0 left-0 flex justify-between items-center px-[4rem] text-white text-xl z-30 h-[3.5rem];
+  @apply w-screen md:h-[4rem] backdrop-blur-md bg-[#00000049] fixed top-0 left-0 flex justify-between items-center px-3 lg:px-[4rem] text-white text-xl z-30 h-[3.5rem];
 }
+
 .InnerNav {
-  @apply md:w-[80%] md:h-full flex flex-col md:static md:flex-row justify-between md:justify-end gap-x-[4rem] md:items-center absolute left-0  z-[-20] w-screen h-screen md:text-white md:py-0 pt-[4rem] pb-[3rem] md:bg-transparent bg-white text-black transition-all duration-700;
+  @apply lg:w-[80%] lg:h-full dark:bg-gray-700 lg:dark:bg-transparent dark:text-white flex flex-col px-3 md:px-0 text-center lg:text-start lg:static lg:flex-row justify-between lg:justify-center gap-x-[6rem] md:items-center absolute left-0  z-[-20] w-screen h-screen lg:text-white lg:py-0 pt-[4rem] pb-[3rem] lg:bg-transparent bg-white text-black transition-all duration-700;
 }
+
 .menu {
-  @apply absolute right-8 top-2 px-[2rem] py-[0.5rem] hover:opacity-75 bg-slate-700 rounded-md md:hidden transition-all duration-700;
+  @apply absolute right-3 md:top-4 top-2 px-[2rem] py-[6px] md:py-[0.5rem] hover:opacity-75 bg-slate-700 rounded-md lg:hidden transition-all duration-700;
 }
+
 .NavLinks {
   @apply md:hover:scale-110 hover:text-[#0000777] transition-all duration-500;
 }
 .logo {
-  @apply w-[3rem] h-[3rem] cursor-pointer;
+  @apply w-10  md:w-[3rem] md:h-[3rem] cursor-pointer;
 }
+
 .body {
   @apply w-screen h-screen;
 }
@@ -51,6 +55,21 @@ a {
 .SliderImage {
   @apply w-full h-full object-cover brightness-[60%];
 }
+.SliderCont {
+  @apply w-full h-full bg-fixed brightness-[60%] bg-center;
+}
+.SliderContFirst {
+  @apply bg-[url("./assets/ServicePage/wealth_management.webp")] bg-cover;
+}
+.SliderContSecond {
+  @apply bg-[url("./assets/ServicePage/crypto-trading.webp")] bg-cover;
+}
+.SliderContThird {
+  @apply bg-[url("./assets/ServicePage/real-estate.webp")] bg-cover;
+}
+.ErrorImage {
+  @apply w-[75%] h-[75%] object-cover bg-no-repeat bg-center animate-pulse bg-[url("./assets/404page/ErrorPage.svg")] dark:bg-[url("./assets/404page/ErrorPageWhite.svg")] transition-all duration-500;
+}
 .descripo {
   @apply absolute top-0 text-center w-full h-full flex flex-col justify-center items-center text-white;
 }
@@ -60,7 +79,7 @@ a {
 }
 
 .SecSection {
-  @apply py-[4rem] w-screen;
+  @apply py-[4rem] w-screen  bg-white dark:bg-gray-800 dark:text-white  text-gray-800 text-justify;
 }
 .SatisfactionTab {
   @apply w-full h-full flex pb-[2rem] flex-col md:flex-row md:px-[4rem] px-[1rem] text-justify items-center justify-between gap-y-[4rem];
@@ -76,7 +95,7 @@ a {
   @apply bg-[url('./assets/AboutPage/about-us-2.webp')];
 }
 .ThirdSection {
-  @apply w-screen py-[3rem] bg-[#f6f7f9];
+  @apply w-screen py-[3rem] bg-[#f6f7f9] dark:bg-gray-900 dark:text-white;
 }
 .Rates {
   @apply w-full h-auto flex flex-col;
@@ -104,7 +123,7 @@ a {
   @apply text-[#aab0bc] text-xl;
 }
 .bigTextFour {
-  @apply text-[#60697b]  text-2xl md:text-3xl font-bold;
+  @apply text-[#60697b]  text-2xl md:text-3xl font-bold dark:text-white;
 }
 .smalls {
   @apply text-lg text-[#aab0bc];
@@ -116,16 +135,16 @@ a {
   @apply w-full  flex flex-col lg:flex-row px-[3rem] justify-between pt-[4rem] text-center gap-y-[2rem];
 }
 .numbers {
-  @apply w-full flex md:flex-row flex-col justify-between text-center gap-y-[2rem];
+  @apply w-full flex md:flex-row flex-col justify-between text-center gap-y-[2rem] dark:text-white;
 }
 .TestimonySection {
   @apply w-full h-[50rem] lg:h-[40rem] px-[1rem] md:px-[4rem] flex lg:flex-row flex-col mt-[4rem];
 }
 .Testmony {
-  @apply lg:w-[50%] w-[100%] lg:h-[100%] h-[50%] bg-[url('./assets/HomePage/happy-testimony.webp')] bg-cover bg-center lg:rounded-l-lg rounded-t-lg;
+  @apply lg:w-[50%] w-[100%] lg:h-[100%] h-[50%] bg-[url('./assets/HomePage/happy-testimony.webp')] bg-cover bg-center rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none;
 }
 .TestimonySwipper {
-  @apply lg:w-[50%] w-[100%] lg:h-[100%] h-[50%] bg-white lg:rounded-r-lg rounded-b-lg drop-shadow-xl;
+  @apply lg:w-[50%] w-[100%] lg:h-[100%] h-[50%] bg-white rounded-b-lg  lg:rounded-r-lg lg:rounded-bl-none drop-shadow-xl;
 }
 .testimonyText {
   @apply w-full h-full flex flex-col px-[1rem] md:px-[4rem] gap-y-[2rem] text-center justify-center;
@@ -148,4 +167,16 @@ a {
 }
 .footerBottom {
   @apply w-full flex justify-center;
+}
+.active {
+  @apply bg-gray-100 dark:bg-gray-900;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+* {
+  transition: all ease-in-out 0.3s;
 }

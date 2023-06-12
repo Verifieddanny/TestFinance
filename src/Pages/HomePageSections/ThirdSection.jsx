@@ -1,21 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
 import badgeImage from "../../assets/HomePage/badge-svgrepo.svg";
 import boxImage from "../../assets/HomePage/briefcase-svgrepo.svg";
 import serachImage from "../../assets/HomePage/searchIcon.svg";
 
 export const ThirdSection = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      once: true,
+    });
+  });
   return (
     <>
       <section className="ThirdSection">
         <div className="Rates">
           <div className="topRateTab">
-            <p className="text-[#aab0bc] text-xl">WHY TRUSTING US</p>
-            <p className=" text-[#60697b] text-3xl font-bold">
+            <p
+              data-aos="fade-down"
+              className="text-[#aab0bc] dark:text-white text-xl"
+            >
+              WHY TRUSTING US
+            </p>
+            <p
+              data-aos="fade-down"
+              className=" text-[#60697b] dark:text-white text-3xl font-bold"
+            >
               Solutions tailored to your needs.
             </p>
           </div>
           <div className="bottomRateTab">
-            <div className="box">
+            <div data-aos="fade-up-left" className="box">
               <img className="rateIcons" src={badgeImage} />
               <p className="bigText">Retirement Advisor</p>
               <p className="smalls">
@@ -23,7 +38,7 @@ export const ThirdSection = () => {
                 We are here to help you with that.
               </p>
             </div>
-            <div className="box">
+            <div data-aos="fade-up-right" className="box">
               <img className="rateIcons" src={boxImage} />
               <p className="bigText">Tax Consultant</p>
               <p className="smalls">
@@ -32,7 +47,7 @@ export const ThirdSection = () => {
                 need our Investment Manager's.
               </p>
             </div>
-            <div className="box">
+            <div data-aos="fade-up-left" className="box">
               <img className="rateIcons" src={serachImage} />
               <p className="bigText">Financial Strategy</p>
               <p className="smalls">

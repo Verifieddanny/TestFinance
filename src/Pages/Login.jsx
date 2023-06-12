@@ -1,12 +1,23 @@
 import React from "react";
 import logo from "../assets/navbar/logo_at_nav_bar.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
 import { motion } from "framer-motion";
-export const LoginPage = () => {
+
+import { useNavigate } from "react-router-dom";
+
+export const LoginPage = ({ setNavon }) => {
+  useEffect(() => {
+    setNavon(true);
+  }, []);
+
+  const navigate = useNavigate();
+
   const onSubmit = (e) => {
     e.preventDefault();
     console.log(user);
+    navigate("/dashboard");
   };
 
   const [user, setUser] = useState({
@@ -22,17 +33,17 @@ export const LoginPage = () => {
     <motion.div>
       <main className="">
         <section className="">
-          <div className="flex flex-col h-auto     items-center justify-center px-6 py-[5rem] mx-auto md:min-h-screen  bg-gray-800 dark:bg-white">
+          <div className="flex flex-col h-auto pt-[6rem] items-center justify-center px-6 py-[5rem] mx-auto md:min-h-screen  dark:bg-gray-800 bg-white">
             <a
               href="#"
-              className="flex items-center mb-6 text-2xl font-semibold dark:text-gray-800  text-white"
+              className="flex items-center mb-6 text-2xl font-semibold text-gray-800  dark:text-white"
             >
               <img className="w-8 h-8 mr-2" src={logo} alt="logo" />
               Finance
             </a>
-            <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+            <div className="w-full dark:bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 bg-gray-800 dark:border-gray-700">
               <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-                <h1 className="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                <h1 className="text-xl text-center font-bold leading-tight tracking-tight dark:text-gray-900 md:text-2xl text-white">
                   Welcome Back
                   <span className="block text-sm mt-1">
                     Sign in to continue
@@ -47,7 +58,7 @@ export const LoginPage = () => {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      className="block mb-2 text-sm font-medium dark:text-gray-900 text-white"
                     >
                       Your email
                     </label>
@@ -55,7 +66,7 @@ export const LoginPage = () => {
                       type="email"
                       name="email"
                       id="email"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className="dark:bg-gray-50 border dark:border-gray-300 dark:text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 dark:placeholder-gray-400 text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="name@company.com"
                       required
                       onChange={(e) => {
@@ -75,7 +86,7 @@ export const LoginPage = () => {
                   <div>
                     <label
                       htmlFor="password"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      className="block mb-2 text-sm font-medium dark:text-gray-900 text-white"
                     >
                       Password
                     </label>
@@ -84,7 +95,7 @@ export const LoginPage = () => {
                       name="password"
                       id="password"
                       placeholder="••••••••"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className="dark:bg-gray-50 border dark:border-gray-300 dark:text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 dark:placeholder-gray-400 text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       required
                       onChange={(e) => {
                         setUser((prev) => {
@@ -111,7 +122,7 @@ export const LoginPage = () => {
                       <div className="ml-3 text-sm">
                         <label
                           htmlFor="remember"
-                          className="text-gray-500 dark:text-gray-300"
+                          className="dark:text-gray-500 text-gray-300"
                         >
                           Remember me
                         </label>
@@ -119,7 +130,7 @@ export const LoginPage = () => {
                     </div>
                     <Link
                       to="/"
-                      className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
+                      className="text-sm font-medium text-primary-600 hover:underline dark:text-gray-700 text-gray-300"
                     >
                       Forgot password?
                     </Link>
@@ -134,15 +145,15 @@ export const LoginPage = () => {
                       user.password.length < 6
                     }
                     type="submit"
-                    className="w-full disabled:bg-opacity-90 text-white bg-[#21262C]  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                    className="w-full disabled:bg-opacity-80 dark:text-white text-gray-900 bg-white dark:bg-[#21262C] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                   >
                     Sign in
                   </button>
-                  <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                  <p className="text-sm font-medium dark:text-gray-600 text-gray-300">
                     Don’t have an account yet?
                     <Link
                       to="/signup"
-                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                      className="font-medium ml-2 dark:text-gray-600 hover:underline text-gray-300"
                     >
                       Sign up
                     </Link>

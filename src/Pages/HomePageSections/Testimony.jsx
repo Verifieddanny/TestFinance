@@ -16,7 +16,7 @@ function Number({ n }) {
   });
 
   return (
-    <animated.div className="text-[#60697b] text-3xl font-bold">
+    <animated.div className="text-[#60697b] dark:text-white text-3xl font-bold">
       {number.to((n) => n.toFixed(0))}
     </animated.div>
   );
@@ -25,7 +25,7 @@ function Number({ n }) {
 export const Testimony = () => {
   const [countOn, setCountOn] = useState(false);
   return (
-    <section className="secSection bg-[#00f7ff1a] pb-[4rem]">
+    <section className="SecSection bg-blue-400 pb-[4rem]">
       <ScrollTrigger
         onEnter={() => setCountOn(true)}
         onExit={() => setCountOn(false)}
