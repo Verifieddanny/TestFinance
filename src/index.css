@@ -113,7 +113,7 @@ a {
 }
 
 .box {
-  @apply w-[25rem] h-auto p-[4rem] rounded-lg drop-shadow-xl bg-white flex flex-col gap-y-[2rem] items-center text-center;
+  @apply md:w-[25rem] w-full h-auto p-[4rem] rounded-lg drop-shadow-xl bg-white flex flex-col gap-y-[2rem] items-center text-center;
 }
 .rateIcons {
   @apply w-[5rem] h-[5rem] object-contain;
