@@ -39,7 +39,7 @@ export const RegisterPage = ({ setNavon }) => {
   };
 
   return (
-    <motion.div>
+    <div>
       <main className="">
         <section className="">
           <div className="flex pt-[6rem] flex-col h-auto items-center justify-center px-6 py-[5rem] mx-auto md:min-h-screen  dark:bg-gray-800 bg-white">
@@ -286,6 +286,6 @@ export const RegisterPage = ({ setNavon }) => {
           </div>
         </section>
       </main>
-    </motion.div>
+    </div>
   );
 };
