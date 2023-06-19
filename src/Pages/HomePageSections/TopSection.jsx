@@ -1,9 +1,9 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
-import pic1 from "../../assets/HomePage/pic1.webp";
-import pic2 from "../../assets/HomePage/pic2.webp";
-import pic3 from "../../assets/HomePage/pic3.webp";
+import pic1 from "../../assets/HomePage/pic1.jpg";
+import pic2 from "../../assets/HomePage/pic2.jpg";
+import pic3 from "../../assets/HomePage/pic3.jpg";
 
 export const TopSection = () => {
   return (

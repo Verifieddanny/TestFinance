@@ -64,13 +64,13 @@ a {
   @apply w-full h-full bg-fixed brightness-[60%] bg-center;
 }
 .SliderContFirst {
-  @apply bg-[url("./assets/ServicePage/wealth_management.webp")] bg-cover;
+  @apply bg-[url("./assets/ServicePage/wealth_management.jpg")] bg-cover;
 }
 .SliderContSecond {
-  @apply bg-[url("./assets/ServicePage/crypto-trading.webp")] bg-cover;
+  @apply bg-[url("./assets/ServicePage/crypto-trading.jpg")] bg-cover;
 }
 .SliderContThird {
-  @apply bg-[url("./assets/ServicePage/real-estate.webp")] bg-cover;
+  @apply bg-[url("./assets/ServicePage/real-estate.jpg")] bg-cover;
 }
 .ErrorImage {
   @apply w-[75%] h-[75%] object-cover bg-no-repeat bg-center animate-pulse bg-[url("./assets/404page/ErrorPage.svg")] dark:bg-[url("./assets/404page/ErrorPageWhite.svg")] transition-all duration-500;
@@ -84,20 +84,23 @@ a {
 }
 
 .SecSection {
-  @apply py-[4rem] h-auto w-screen  bg-white dark:bg-gray-800 dark:text-white  text-gray-800 text-justify;
+  @apply w-screen py-[3rem] bg-white dark:bg-gray-800 dark:text-white  text-gray-800 text-justify;
 }
 .SatisfactionTab {
-  @apply w-full h-full flex pb-[2rem] flex-col md:flex-row md:px-[4rem] px-[1rem] text-justify items-center justify-between gap-y-[4rem];
+  @apply w-full h-full flex pb-[2rem] flex-col md:flex-row md:px-[4rem] px-[1rem] text-justify items-center justify-between gap-y-[5rem] mb-[3rem];
+}
+.SatisfactionTabFouth {
+  @apply w-full h-full flex  flex-col md:flex-row md:px-[4rem] px-[1rem] text-justify items-center justify-between gap-y-[5rem] my-[2rem];
 }
 .leftTab,
 .rightTab {
   @apply md:w-[45%] md:h-[30rem] flex flex-col justify-center w-[90%] h-[30rem];
 }
 .leftTab {
-  @apply bg-[url('./assets/HomePage/shake.webp')] bg-cover rounded-md bg-center md:mb-0 mb-[2rem];
+  @apply bg-[url('./assets/HomePage/shake.jpg')] bg-cover rounded-md bg-center  mb-[3rem];
 }
 .leftTabAbout {
-  @apply bg-[url('./assets/AboutPage/about-us-2.webp')];
+  @apply bg-[url('./assets/AboutPage/about-us-2.jpg')];
 }
 .ThirdSection {
   @apply w-screen py-[3rem] bg-[#f6f7f9] dark:bg-gray-900 dark:text-white;
@@ -134,7 +137,7 @@ a {
   @apply text-lg text-[#aab0bc];
 }
 .leftTabSec {
-  @apply bg-[url('./assets/HomePage/wealth_management.webp')];
+  @apply bg-[url('./assets/HomePage/wealth_management.jpg')] md:mb-0;
 }
 .SatisfactTop {
   @apply w-full  flex flex-col lg:flex-row px-[3rem] justify-between pt-[4rem] text-center gap-y-[2rem];
@@ -146,10 +149,10 @@ a {
   @apply w-full h-[50rem] lg:h-[40rem] px-[1rem] md:px-[4rem] flex lg:flex-row flex-col mt-[4rem];
 }
 .Testmony {
-  @apply lg:w-[50%] w-[100%] lg:h-[100%] h-[50%] bg-[url('./assets/HomePage/happy-testimony.webp')] bg-cover bg-center rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none;
+  @apply lg:w-[50%] w-[100%] lg:h-[100%] h-[50%] bg-[url('./assets/HomePage/happy-testimony.jpg')] bg-cover bg-center rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none;
 }
 .TestimonySwipper {
-  @apply lg:w-[50%] w-[100%] lg:h-[100%] h-[50%] bg-white rounded-b-lg  lg:rounded-r-lg lg:rounded-bl-none drop-shadow-xl;
+  @apply lg:w-[50%] w-[100%] lg:h-[100%] h-[50%]  bg-gray-800 dark:bg-white dark:text-gray-800  text-white  rounded-b-lg  lg:rounded-r-lg lg:rounded-bl-none drop-shadow-xl;
 }
 .testimonyText {
   @apply w-full h-full flex flex-col px-[1rem] md:px-[4rem] gap-y-[2rem] text-center justify-center;

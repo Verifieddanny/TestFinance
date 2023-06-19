@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import pic1 from "../../assets/AboutPage/about-us.webp";
+import pic1 from "../../assets/AboutPage/about-us.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 export const TopSectionAbout = () => {

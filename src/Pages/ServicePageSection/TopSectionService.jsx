@@ -1,13 +1,22 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 export const TopSectionService = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      once: true,
+    });
+  }, []);
   return (
     <>
       <section className="TopSection flex justify-center relative">
         <div className="SliderCont SliderContFirst"></div>
         <div className="descripo">
-          <h2 className="text-5xl mb-[2rem]">Forex Trading</h2>
-          <h5 className="text-xl">
+          <h2 data-aos="fade-right" className="text-5xl mb-[2rem]">
+            Forex Trading
+          </h2>
+          <h5 data-aos="fade-left" className="text-xl">
             Maximize profit and reduce risks when you trade with us.
           </h5>
         </div>
@@ -34,8 +43,12 @@ export const TopSectionService = () => {
       <section className="TopSection flex justify-center relative">
         <div className="SliderCont SliderContSecond"></div>
         <div className="descripo">
-          <h2 className="text-5xl mb-[2rem]">Crypto Trading</h2>
-          <h5 className="text-xl">Crypto trading made simple for everyone.</h5>
+          <h2 data-aos="fade-right" className="text-5xl mb-[2rem]">
+            Crypto Trading
+          </h2>
+          <h5 data-aos="fade-left" className="text-xl">
+            Crypto trading made simple for everyone.
+          </h5>
         </div>
       </section>
       <section className="ServiceDescrip">
@@ -66,8 +79,10 @@ export const TopSectionService = () => {
       <section className="TopSection flex justify-center relative">
         <div className="SliderCont SliderContThird"></div>
         <div className="descripo">
-          <h2 className="text-5xl mb-[2rem]">Real Estate</h2>
-          <h5 className="text-xl">
+          <h2 data-aos="fade-right" className="text-5xl mb-[2rem]">
+            Real Estate
+          </h2>
+          <h5 data-aos="fade-left" className="text-xl">
             Build long term wealth with Our Real Estate Investments.
           </h5>
         </div>
