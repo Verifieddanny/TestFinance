@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 export const SecScetionAbout = () => {
   useEffect(() => {
     AOS.init({
-      duration: 500,
+      duration: 700,
       once: true,
     });
   }, []);

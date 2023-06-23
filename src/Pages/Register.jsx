@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/navbar/logo_at_nav_bar.png";
 import { useNavigate } from "react-router-dom";
-
+import ReCAPTCHA from "react-google-recaptcha";
 export const RegisterPage = ({ setNavon }) => {
   useEffect(() => {
     setNavon(true);
   }, []);
-
+  const onChange = () => {};
   const navigate = useNavigate();
 
   const [user, setUser] = useState({
@@ -48,12 +48,12 @@ export const RegisterPage = ({ setNavon }) => {
               className="flex items-center mb-6 text-2xl font-semibold text-gray-800  dark:text-white"
             >
               <img className="w-8 h-8 mr-2 " src={logo} alt="logo" />
-              Finance
+              Heaviside Finance
             </a>
             <h1 className="text-xl mb-5 text-center font-bold leading-tight tracking-tight  md:text-2xl text-gray-800  dark:text-white">
               Register Account
               <span className="block font-medium text-sm mt-1">
-                Get your free Finance account now.
+                Get your free Heaviside Finance account now.
               </span>
             </h1>
             <div className="w-full dark:bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 bg-gray-800 dark:border-gray-700">
@@ -144,7 +144,7 @@ export const RegisterPage = ({ setNavon }) => {
                       }}
                       id="gender"
                     >
-                      <option value="" disabled selected>
+                      <option value="" selected>
                         Select Gender
                       </option>
                       <option value="male">Male</option>
@@ -204,7 +204,7 @@ export const RegisterPage = ({ setNavon }) => {
                       name="passwordConfirmation"
                       id="passwordConfirmation"
                       placeholder="••••••••"
-                      className="dark:bg-gray-50 border dark:border-gray-300 dark:text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 dark:placeholder-gray-400 text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className="dark:bg-gray-50 border dark:border-gray-300 dark:text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 dark:placeholder-gray-400 text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3"
                       required
                       value={user.confirmPassword}
                       onChange={(e) => {
@@ -225,6 +225,12 @@ export const RegisterPage = ({ setNavon }) => {
                       }}
                     />
                     {/* Error Message Regarding Password  */}
+                    {/*Recatpcha Start*/}
+                    <ReCAPTCHA
+                      sitekey="6LemHLUmAAAAAG2FTSlQvH1xQmw-GOqpLk733OJz"
+                      onChange={onChange}
+                    />
+                    {/*Recatpcha End*/}
                     <p className="text-sm text-red-600 font-medium">
                       {error.id === "notEqual" && error.message}
                     </p>

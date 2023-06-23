@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../assets/navbar/logo_at_nav_bar.png";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import ReCAPTCHA from "react-google-recaptcha";
 import { useNavigate } from "react-router-dom";
 
 export const LoginPage = ({ setNavon }) => {
@@ -10,6 +10,7 @@ export const LoginPage = ({ setNavon }) => {
     setNavon(true);
   }, []);
 
+  const onChange = () => {};
   const navigate = useNavigate();
 
   const onSubmit = (e) => {
@@ -37,7 +38,7 @@ export const LoginPage = ({ setNavon }) => {
               className="flex items-center mb-6 text-2xl font-semibold text-gray-800  dark:text-white"
             >
               <img className="w-8 h-8 mr-2" src={logo} alt="logo" />
-              Finance
+              Heaviside Finance
             </a>
             <div className="w-full dark:bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 bg-gray-800 dark:border-gray-700">
               <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -93,7 +94,7 @@ export const LoginPage = ({ setNavon }) => {
                       name="password"
                       id="password"
                       placeholder="••••••••"
-                      className="dark:bg-gray-50 border dark:border-gray-300 dark:text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 dark:placeholder-gray-400 text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className="dark:bg-gray-50 border dark:border-gray-300 dark:text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 dark:placeholder-gray-400 text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2"
                       required
                       onChange={(e) => {
                         setUser((prev) => {
@@ -106,6 +107,14 @@ export const LoginPage = ({ setNavon }) => {
                       {error.message}
                     </p>
                   </div>
+
+                  {/*Recatpcha Start*/}
+                  <ReCAPTCHA
+                    sitekey="6LemHLUmAAAAAG2FTSlQvH1xQmw-GOqpLk733OJz"
+                    onChange={onChange}
+                  />
+                  {/*Recatpcha End*/}
+
                   <div className="flex items-center justify-between">
                     <div className="flex items-start">
                       <div className="flex items-center h-5">

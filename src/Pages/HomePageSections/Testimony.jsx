@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import ScrollTrigger from "react-scroll-trigger";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -6,6 +6,8 @@ import { Autoplay, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Number({ n }) {
   const { number } = useSpring({
@@ -24,6 +26,12 @@ function Number({ n }) {
 
 export const Testimony = () => {
   const [countOn, setCountOn] = useState(false);
+  useEffect(() => {
+    AOS.init({
+      duration: 700,
+      once: true,
+    });
+  }, []);
   return (
     <section className="SecSection bg-blue-400 pb-[4rem]">
       <ScrollTrigger
@@ -49,7 +57,7 @@ export const Testimony = () => {
         </div>
       </ScrollTrigger>
       <div className="TestimonySection">
-        <div className="Testmony"></div>
+        <div className="Testmony" data-aos="fade-right"></div>
         <Swiper
           modules={[Pagination, Autoplay]}
           centeredSlides={true}
@@ -65,6 +73,7 @@ export const Testimony = () => {
           slidesPerView={1}
           loop
           className="MySwipper TestimonySwipper"
+          data-aos="fade-left"
         >
           <SwiperSlide className="swipes">
             <div className="testimonyText">
