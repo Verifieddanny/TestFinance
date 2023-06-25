@@ -30,7 +30,7 @@ export const RegisterPage = ({ setNavon }) => {
 
     try {
       const validData = registerUserSchema.parse(user);
-      const result = await fetch(`${import.meta.env.SERVER_URL}/register`, {
+      const result = await fetch(`https://api.heavisidefinance.online/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

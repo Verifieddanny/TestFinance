@@ -19,7 +19,7 @@ export const LoginPage = ({ setNavon }) => {
 
     try {
       const validata = loginUserSchema.parse(user);
-      const response = await fetch(`${import.meta.env.SERVER_URL}/login`, {
+      const response = await fetch(`https://api.heavisidefinance.online/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

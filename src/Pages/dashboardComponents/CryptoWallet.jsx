@@ -23,7 +23,7 @@ const Crypto = ({ theme, setNavon, setTheme }) => {
   const { isLoading, error, data } = useQuery({
     queryKey: ["user"],
     queryFn: () =>
-      fetch(`${import.meta.env.SERVER_URL}/user`, {
+      fetch(`https://api.heavisidefinance.online/user`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

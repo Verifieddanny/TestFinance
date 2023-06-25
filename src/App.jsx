@@ -24,7 +24,7 @@ function App() {
   const [user, setUser] = useState({});
 
   const { data } = useQuery("user", async () => {
-    const response = await fetch(`${import.meta.env.SERVER_URL}/user`, {
+    const response = await fetch(`https://api.heavisidefinance.online/user`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
