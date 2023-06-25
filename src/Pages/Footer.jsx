@@ -37,7 +37,7 @@ export const FooterComponent = () => {
             </a>
           </li>
           <li>
-            <a href="tel:+000000000000">Phone: +000000000000 </a>
+            <a href="tel:+1(480) 382-1908">Phone: +1(480) 382-1908 </a>
           </li>
         </ul>
       </div>
