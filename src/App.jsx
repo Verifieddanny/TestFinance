@@ -14,10 +14,27 @@ import Deposit from "./Pages/dashboardComponents/Deposit";
 import Withdraw from "./Pages/dashboardComponents/Withdraw";
 import Crypto from "./Pages/dashboardComponents/CryptoWallet";
 import logo from "./assets/navbar/logo_at_nav_bar.png";
+import { Toaster } from "sonner";
+import { useQuery } from "react-query";
+
 function App() {
   const localS = localStorage.getItem("theme");
   const [theme, setTheme] = useState(localS);
   const [navOn, setNavOn] = useState(true);
+  const [user, setUser] = useState({});
+
+  const { data } = useQuery("user", async () => {
+    const response = await fetch(`https://api.heavisidefinance.online/user`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    const data = await response.json();
+    setUser(data);
+    return data;
+  });
 
   useEffect(() => {
     switch (theme) {
@@ -63,12 +80,22 @@ function App() {
             <Link className="NavLinks" to="/services">
               Services
             </Link>
-            <Link className="NavLinks" to="/signup">
-              SignUp
-            </Link>
-            <Link className="NavLinks" to="/login">
-              Login
-            </Link>
+            {user.id ? (
+              <div>
+                <Link className="NavLinks" to="/signup">
+                  SignUp
+                </Link>
+                <Link className="NavLinks" to="/login">
+                  Login
+                </Link>
+              </div>
+            ) : (
+              <div>
+                <Link className="NavLinks" to="/dashboard">
+                  Dashboard
+                </Link>
+              </div>
+            )}
             <button
               type="button"
               onClick={() => {
@@ -123,6 +150,7 @@ function App() {
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
       {navOn && <FooterComponent />}
+      <Toaster richColors />
     </Router>
   );
 }

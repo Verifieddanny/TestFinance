@@ -9,6 +9,7 @@ import {
   BsUpload,
 } from "react-icons/bs";
 import { FaBtc, FaUserAlt } from "react-icons/fa";
+import { useQuery } from "react-query";
 import Axios from "axios";
 
 const Crypto = ({ theme, setNavon, setTheme }) => {
@@ -17,6 +18,29 @@ const Crypto = ({ theme, setNavon, setTheme }) => {
   const [selected, setSelected] = useState("bitcoin");
   const [value, setValue] = useState(0);
   const [amount, setAmount] = useState(0);
+
+  const [user, setUser] = useState({});
+  const { isLoading, error, data } = useQuery({
+    queryKey: ["user"],
+    queryFn: () =>
+      fetch(`https://api.heavisidefinance.online/user`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }).then((res) => res.json()),
+  });
+
+  useEffect(() => {
+    if (!isLoading && !data) {
+      // navigate to login
+    }
+
+    if (!isLoading && data) {
+      setUser(data.user);
+    }
+  }, [isLoading, data]);
 
   useEffect(() => {
     setNavon(false);
@@ -192,7 +216,7 @@ const Crypto = ({ theme, setNavon, setTheme }) => {
             <main className="grid place-items-center w-full">
               <div className="grid w-full max-w-3xl  border-gray-800 mt-5 dark:text-white rounded border-dashed border-2 gap-4 mb-4">
                 <h1 className="w-full text-center h-32 grid place-items-center text-white font-bold text-2xl bg-gray-900 ">
-                  $0.00
+                  ${user.balance || 0}
                 </h1>
                 {prices ? (
                   <section className="w-full p-2 md:px-5 gap-5 grid">
@@ -201,42 +225,42 @@ const Crypto = ({ theme, setNavon, setTheme }) => {
                       name={prices?.btc?.name}
                       price={prices.btc?.price}
                       change={prices.btc?.priceChange1d}
-                      amount={1000}
+                      amount={user.btcBalance}
                     />
                     <Template
                       src={prices?.eth?.icon}
                       name={prices?.eth?.name}
                       price={prices.eth?.price}
                       change={prices.eth?.priceChange1d}
-                      amount={1000}
+                      amount={user.ethBalance}
                     />
                     <Template
                       src={prices?.usdt?.icon}
                       name={prices?.usdt?.name}
                       price={prices.usdt?.price}
                       change={prices.usdt?.priceChange1d}
-                      amount={1000}
+                      amount={user.usdtBalance}
                     />
                     <Template
                       src={prices?.bsc?.icon}
                       name={prices?.bsc?.name}
                       price={prices.bsc?.price}
                       change={prices.bsc?.priceChange1d}
-                      amount={1000}
+                      amount={user.bnbBalance}
                     />
                     <Template
                       src={prices?.ripple?.icon}
                       name={prices?.ripple?.name}
                       price={prices.ripple?.price}
                       change={prices.ripple?.priceChange1d}
-                      amount={1000}
+                      amount={user.xrpBalance}
                     />
                     <Template
                       src={prices?.sol?.icon}
                       name={prices?.sol?.name}
                       price={prices.sol?.price}
                       change={prices.sol?.priceChange1d}
-                      amount={1000}
+                      amount={user.solBalance}
                     />
                   </section>
                 ) : (

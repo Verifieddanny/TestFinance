@@ -1,9 +1,10 @@
-import React from "react";
 import logo from "../assets/navbar/logo_at_nav_bar.png";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
+import { loginUserSchema } from "../zod/user";
 
 export const LoginPage = ({ setNavon }) => {
   useEffect(() => {
@@ -13,10 +14,32 @@ export const LoginPage = ({ setNavon }) => {
   const onChange = () => {};
   const navigate = useNavigate();
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(user);
-    navigate("/dashboard");
+
+    try {
+      const validata = loginUserSchema.parse(user);
+      const response = await fetch(`https://api.heavisidefinance.online/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(validata),
+      });
+
+      if (response.status !== 200) {
+        const data = await response.json();
+        toast.error(data.error);
+        return;
+      }
+
+      const data = await response.json();
+      localStorage.setItem("token", data.token);
+      toast.success("login success");
+      navigate("/dashboard");
+    } catch (error) {
+      toast.error("something went wrong try again");
+    }
   };
 
   const [user, setUser] = useState({
