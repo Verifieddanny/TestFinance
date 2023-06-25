@@ -205,7 +205,9 @@ const Withdraw = ({ theme, setNavon, setTheme }) => {
                     disabled={Number(value) < 100 || wallet === ""}
                     className="w-full h-12 mt-5 disabled:text-gray-900 rounded-xl disabled:cursor-not-allowed disabled:dark:text-white disabled:dark:bg-slate-500 disabled:bg-slate-300 bg-slate-600 text-white dark:bg-slate-800  "
                   >
-                    Confirm
+                    <a href="mailto:customer-support@heavisidefinance.online">
+                      Confirm
+                    </a>
                   </button>
                 </section>
               </div>

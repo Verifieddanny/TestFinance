@@ -15,7 +15,10 @@ export const SecScetion = () => {
         <div className="SatisfactionTab">
           <div data-aos="fade-up-right" className="leftTab"></div>
           <div className="rightTab">
-            <p data-aos="fade-down" className="text-3xl mb-[1rem]">
+            <p
+              data-aos="fade-down"
+              className="text-3xl md:mb-[1rem] md:mt-[0rem] text-center mt-[2rem] mb-[4rem]"
+            >
               Your Satisfaction Defines Us
             </p>
             <p data-aos="fade-up" className="text-xl mb-[1rem]">

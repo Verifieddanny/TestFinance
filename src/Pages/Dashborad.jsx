@@ -49,7 +49,7 @@ export const Dashborad = ({ theme, setNavon, setTheme }) => {
                 <Link to="/" className="flex ml-2 md:mr-24">
                   <img src={logo} className="h-8 mr-3" alt="FlowBite Logo" />
                   <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
-                    Finance
+                    Heaviside Finance
                   </span>
                 </Link>
               </div>
@@ -160,7 +160,7 @@ export const Dashborad = ({ theme, setNavon, setTheme }) => {
             <h1 className="text-xl dark:text-white mb-3 font-medium">
               Hello, User
             </h1>
-            <div className="grid border-gray-800 rounded p-2 border-dashed border-2 lg:grid-cols-3 gap-4 mb-4">
+            <div className="grid border-gray-800 rounded p-2 border-dashed border-2 lg:grid-cols-2 gap-4 mb-4 ">
               {/* Assets value  */}
 
               <div className="flex min-w-[240px] w-full border-gray-500 justify-between border-2 dark:border-0 text-gray-900 dark:text-white p-4 flex-col min-h-24 rounded bg-gray-50 dark:bg-gray-800">
@@ -201,7 +201,7 @@ export const Dashborad = ({ theme, setNavon, setTheme }) => {
               </div>
 
               {/* Referrals  */}
-              <div className="flex min-w-[240px] w-full border-gray-500 justify-between border-2 dark:border-0 text-gray-900 dark:text-white p-4 flex-col min-h-24 rounded bg-gray-50 dark:bg-gray-800">
+              {/* <div className="flex min-w-[240px] w-full border-gray-500 justify-between border-2 dark:border-0 text-gray-900 dark:text-white p-4 flex-col min-h-24 rounded bg-gray-50 dark:bg-gray-800">
                 <div className="text-lg overflow-ellipsis mb-3">Referrals:</div>
                 <div className="text-2xl mb-3 font-medium">0</div>
                 <hr />
@@ -210,7 +210,7 @@ export const Dashborad = ({ theme, setNavon, setTheme }) => {
                     Referral
                   </button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

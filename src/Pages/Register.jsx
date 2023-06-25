@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/navbar/logo_at_nav_bar.png";
 import { useNavigate } from "react-router-dom";
-import ReCAPTCHA from "react-google-recaptcha";
+
 export const RegisterPage = ({ setNavon }) => {
   useEffect(() => {
     setNavon(true);
@@ -225,12 +225,7 @@ export const RegisterPage = ({ setNavon }) => {
                       }}
                     />
                     {/* Error Message Regarding Password  */}
-                    {/*Recatpcha Start*/}
-                    <ReCAPTCHA
-                      sitekey="6LemHLUmAAAAAG2FTSlQvH1xQmw-GOqpLk733OJz"
-                      onChange={onChange}
-                    />
-                    {/*Recatpcha End*/}
+
                     <p className="text-sm text-red-600 font-medium">
                       {error.id === "notEqual" && error.message}
                     </p>
