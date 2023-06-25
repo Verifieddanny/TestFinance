@@ -20,17 +20,15 @@ const Crypto = ({ theme, setNavon, setTheme }) => {
   const [amount, setAmount] = useState(0);
 
   const [user, setUser] = useState({});
-  const { isLoading, error, data } = useQuery({
-    queryKey: ["user"],
-    queryFn: () =>
-      fetch(`https://api.heavisidefinance.online/user`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }).then((res) => res.json()),
-  });
+  const { isLoading, error, data } = useQuery("user", async () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      return;
+    }
+    
+     
+
+    });
 
   useEffect(() => {
     if (!isLoading && !data) {
