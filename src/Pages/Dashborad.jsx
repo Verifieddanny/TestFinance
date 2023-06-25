@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/navbar/logo_at_nav_bar.png";
+
+import { useQuery } from "react-query";
 import {
   BsDoorOpen,
   BsMoon,
@@ -11,6 +13,34 @@ import {
 import { FaBtc, FaUserAlt } from "react-icons/fa";
 
 export const Dashborad = ({ theme, setNavon, setTheme }) => {
+  const [total, setTotal] = useState(0);
+  const [user, setUser] = useState({});
+  const { isLoading, error, data } = useQuery({
+    queryKey: ["user"],
+    queryFn: () =>
+      fetch(`${import.meta.env.SERVER_URL}/user`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }).then((res) => res.json()),
+  });
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isLoading && !data) {
+      // navigate to login
+      navigate("/login");
+    }
+
+    if (!isLoading && data) {
+      setUser(data.user);
+      setTotal(data.user.balance);
+    }
+  }, [isLoading, data]);
+
   const [isClosed, setIsClosed] = useState(true);
   const navigateDeposite = useNavigate();
   const navigateWithdraw = useNavigate();
@@ -158,7 +188,7 @@ export const Dashborad = ({ theme, setNavon, setTheme }) => {
         <div className="p-4 lg:ml-56 dark:bg-gray-700 min-h-screen ">
           <div className="md:p-4  rounded-lg dark:border-gray-700 mt-14">
             <h1 className="text-xl dark:text-white mb-3 font-medium">
-              Hello, User
+              Hello, {user.name ? user.name : "User"}
             </h1>
             <div className="grid border-gray-800 rounded p-2 border-dashed border-2 lg:grid-cols-3 gap-4 mb-4">
               {/* Assets value  */}
@@ -167,7 +197,13 @@ export const Dashborad = ({ theme, setNavon, setTheme }) => {
                 <div className="text-lg overflow-ellipsis mb-3">
                   Total Assets Value:
                 </div>
-                <div className="text-2xl mb-3 font-medium">$0.00</div>
+                <div className="text-2xl mb-3 font-medium">
+                  {isLoading ? (
+                    <div className="font-bold text-3xl animate-bounce"> .</div>
+                  ) : (
+                    total
+                  )}
+                </div>
                 <hr />
                 <div className="flex items-center gap-3">
                   <Link
