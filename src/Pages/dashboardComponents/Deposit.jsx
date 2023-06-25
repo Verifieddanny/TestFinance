@@ -9,8 +9,10 @@ import {
   BsUpload,
 } from "react-icons/bs";
 import { FaBtc, FaUserAlt } from "react-icons/fa";
-
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import Axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Deposit = ({ theme, setNavon, setTheme }) => {
   const [isClosed, setIsClosed] = useState(true);
@@ -24,6 +26,18 @@ const Deposit = ({ theme, setNavon, setTheme }) => {
     setNavon(false);
   }, []);
 
+  const onCopied = () => {
+    toast("Copied! 🔗", {
+      position: "top-center",
+      autoClose: 500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
   useEffect(() => {
     if (selected === "bitcoin") {
       setAmount(Number(value) / prices.btc);
@@ -42,7 +56,6 @@ const Deposit = ({ theme, setNavon, setTheme }) => {
 
   useEffect(() => {
     Axios.get("https://api.coinstats.app/public/v1/coins").then((response) => {
-      console.log(prices);
       setCoins({
         btc: response.data.coins[0].price,
         eth: response.data.coins[1].price,
@@ -227,7 +240,18 @@ const Deposit = ({ theme, setNavon, setTheme }) => {
                   <p className="text-sm my-3">
                     AMOUNT
                     <sub className="ml-2 text-xs font-bold dark:text-blue-300 text-blue-500 ">
-                      BTC
+                      {/* BTC */}
+                      {selected === "bitcoin"
+                        ? "BTC"
+                        : selected === "ethereum"
+                        ? "ETH"
+                        : selected === "bsc"
+                        ? "BSC"
+                        : selected === "solana"
+                        ? "SOL"
+                        : selected === "usdt"
+                        ? "USDT"
+                        : "XRP"}
                     </sub>
                   </p>
                   <input
@@ -254,9 +278,32 @@ const Deposit = ({ theme, setNavon, setTheme }) => {
 
       <Overflow
         amount={amount}
-        currency="btc"
+        currency={
+          selected === "bitcoin"
+            ? "BTC"
+            : selected === "ethereum"
+            ? "ETH"
+            : selected === "bsc"
+            ? "BSC"
+            : selected === "solana"
+            ? "SOL"
+            : selected === "usdt"
+            ? "USDT"
+            : "XRP"
+        }
         setDisplay={setDisplay}
         display={display}
+        selected={selected}
+        text={
+          selected === "bitcoin"
+            ? "bc1q8m9d6fz0sllgh0y8fyyx7uusjnyeyuwlujue42"
+            : selected === "ethereum"
+            ? "0xe5dD0CCdd9036FD3A1Ec4Da3B44A7bACf98c7c55"
+            : selected === "solana"
+            ? "5kvZXdjmbZD2HYwdzQeoe8oqcfsH3e9Sq1yF5HvhHtHj"
+            : "0xe5dD0CCdd9036FD3A1Ec4Da3B44A7bACf98c7c55"
+        }
+        onCopied={onCopied}
       />
     </>
   );
@@ -264,13 +311,21 @@ const Deposit = ({ theme, setNavon, setTheme }) => {
 
 // Overflow Modal
 
-const Overflow = ({ amount, currency, display, setDisplay }) => {
+const Overflow = ({
+  amount,
+  currency,
+  display,
+  setDisplay,
+  selected,
+  text,
+  onCopied,
+}) => {
   return (
     <>
       <section
         className={`absolute bg-opacity-80 ${
           !display && "hidden"
-        }  dark:bg-opacity-30 lg:pl-56 px-10 top-0 grid place-items-center bg-white w-full h-screen `}
+        }  dark:bg-opacity-30 lg:pl-56 px-[2rem] top-0 flex items-center justify-center bg-white w-full h-screen `}
       >
         <main
           onClick={() => {
@@ -278,10 +333,24 @@ const Overflow = ({ amount, currency, display, setDisplay }) => {
           }}
           className="absolute w-full h-full top-0 z-[1]"
         ></main>
-        <div className="px-5 z-[2] py-10 rounded-xl w-full text-center text-white  bg-gray-700">
-          <p className="text-xl font-medium ">
-            Send {amount} {currency}
-          </p>
+        <div className="px-5 z-[2] py-10 rounded-xl md:w-[60%] w-full text-center text-white  bg-gray-700">
+          <CopyToClipboard text={text}>
+            <p className="text-xl font-medium ">
+              I'm Sending {amount} {currency} to <br /> <br />
+              <span
+                className=" bg-gray-900 rounded-xl p-3 mt-2 text-sm"
+                onClick={onCopied}
+              >
+                {selected === "bitcoin"
+                  ? "bc1q8m9d6fz0sllgh0y8fyyx7uusjnyeyuwlujue42"
+                  : selected === "ethereum"
+                  ? "0xe5dD0CCdd9036FD3A1Ec4Da3B44A7bACf98c7c55"
+                  : selected === "solana"
+                  ? "5kvZXdjmbZD2HYwdzQeoe8oqcfsH3e9Sq1yF5HvhHtHj"
+                  : "0xe5dD0CCdd9036FD3A1Ec4Da3B44A7bACf98c7c55"}
+              </span>
+            </p>
+          </CopyToClipboard>
           <button
             onClick={() => {
               setDisplay(false);
@@ -290,7 +359,23 @@ const Overflow = ({ amount, currency, display, setDisplay }) => {
           >
             I've paid.
           </button>
+          <p className="text-sm text-left text-white mt-2">
+            click on address to copy address
+          </p>
         </div>
+        <ToastContainer
+          position="top-center"
+          autoClose={500}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
+        <br />
       </section>
     </>
   );

@@ -11,36 +11,6 @@ export const TopSectionService = () => {
   return (
     <>
       <section className="TopSection flex justify-center relative">
-        <div className="SliderCont SliderContFirst"></div>
-        <div className="descripo">
-          <h2 data-aos="fade-right" className="text-5xl mb-[2rem]">
-            Forex Trading
-          </h2>
-          <h5 data-aos="fade-left" className="text-xl">
-            Maximize profit and reduce risks when you trade with us.
-          </h5>
-        </div>
-      </section>
-      <section className="ServiceDescrip">
-        <p>
-          Forex or Fx is an acronym of Foreign Exchange and Forex trading means
-          to trade on this market. Trading takes place by predicting how one
-          currency performs against another in a Forex pair. It is the largest
-          market in the world with average daily trading volumes exceeding
-          trillions of dollars. For those who know what they are doing, Forex
-          trading can be very profitable activity although it doesn't come
-          without risks. To get the best out of your trading experience. It is
-          critical that you choose a Forex platform/broker that can offer you
-          everything you need from demo platforms to educational tools.
-          Selecting the right broker can be a time-consuming process. Who do you
-          choose and why? What do you look out for and how do you know that the
-          company/broker is safe? That is where we come in. Our team of experts
-          scour the internet reviewing and rating all of the markets, so that we
-          only present you with the best of them. It is then up to you to make
-          an informed decision as to how much to invest.
-        </p>
-      </section>
-      <section className="TopSection flex justify-center relative">
         <div className="SliderCont SliderContSecond"></div>
         <div className="descripo">
           <h2 data-aos="fade-right" className="text-5xl mb-[2rem]">
@@ -74,6 +44,36 @@ export const TopSectionService = () => {
           also have cryptocurrency traders that specialize in the trading of
           this digital cash. Our job is to test them all out, put them through
           their paces and then present our information, for better result.
+        </p>
+      </section>
+      <section className="TopSection flex justify-center relative">
+        <div className="SliderCont SliderContFirst"></div>
+        <div className="descripo">
+          <h2 data-aos="fade-right" className="text-5xl mb-[2rem]">
+            Forex Trading
+          </h2>
+          <h5 data-aos="fade-left" className="text-xl">
+            Maximize profit and reduce risks when you trade with us.
+          </h5>
+        </div>
+      </section>
+      <section className="ServiceDescrip">
+        <p>
+          Forex or Fx is an acronym of Foreign Exchange and Forex trading means
+          to trade on this market. Trading takes place by predicting how one
+          currency performs against another in a Forex pair. It is the largest
+          market in the world with average daily trading volumes exceeding
+          trillions of dollars. For those who know what they are doing, Forex
+          trading can be very profitable activity although it doesn't come
+          without risks. To get the best out of your trading experience. It is
+          critical that you choose a Forex platform/broker that can offer you
+          everything you need from demo platforms to educational tools.
+          Selecting the right broker can be a time-consuming process. Who do you
+          choose and why? What do you look out for and how do you know that the
+          company/broker is safe? That is where we come in. Our team of experts
+          scour the internet reviewing and rating all of the markets, so that we
+          only present you with the best of them. It is then up to you to make
+          an informed decision as to how much to invest.
         </p>
       </section>
       <section className="TopSection flex justify-center relative">

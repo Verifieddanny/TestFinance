@@ -12,7 +12,11 @@ export const FourthSection = () => {
     <section className="SecSection">
       <div className=" SatisfactionTabFouth">
         <div data-aos="fade-down" className="rightTab ">
-          <p data-aos="fade-up" className="text-[#60697b] text-3xl font-bold ">
+          <p
+            data-aos="fade-up"
+            className="text-[#60697b] text-3xl font-bold mb-[2rem] text-center
+          "
+          >
             COMPREHENSIVE WEALTH MANAGEMENT
           </p>
           <p data-aos="fade-down" className="text-xl mb-[1rem]">

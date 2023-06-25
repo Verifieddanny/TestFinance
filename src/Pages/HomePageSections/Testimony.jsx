@@ -79,8 +79,8 @@ export const Testimony = () => {
             <div className="testimonyText">
               <p className="bigTextThree">
                 “I am completely new to investing, so this is like learning a
-                new language to me, hightrove has been a very suitable to me and
-                my friends.”
+                new language to me, Heaviside Finance has been a very suitable
+                to me and my friends.”
               </p>
               <p className="bigTextTwo">Simon Charles</p>
             </div>
@@ -88,11 +88,11 @@ export const Testimony = () => {
           <SwiperSlide className="swipes">
             <div className="testimonyText">
               <p className="bigTextThree">
-                "I’ve been a client at hightrove investment for many years, I
-                appreciate the courtesy from the staff, not only do they have an
-                outstanding work ethic and their moral standards are of the
-                highest caliber, I would recommend hightrove to anyone without
-                Hesitation."
+                "I’ve been a client at Heaviside Finance investment for many
+                years, I appreciate the courtesy from the staff, not only do
+                they have an outstanding work ethic and their moral standards
+                are of the highest caliber, I would recommend Heaviside Finance
+                to anyone without Hesitation."
               </p>
               <p className="bigTextTwo">Mary Sparks</p>
             </div>
@@ -103,7 +103,7 @@ export const Testimony = () => {
                 "I travel a lot because for my work and usually don’t have much
                 time to monitor my account, I get emails of the progress, money
                 is sent to me wherever I am and it’s just perfect.. so I will
-                advise everyone to look into hightrove."
+                advise everyone to look into Heaviside Finance."
               </p>
               <p className="bigTextTwo">Grace Shae</p>
             </div>

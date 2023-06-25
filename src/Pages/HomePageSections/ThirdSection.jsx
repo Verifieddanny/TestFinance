@@ -32,7 +32,7 @@ export const ThirdSection = () => {
           <div className="bottomRateTab">
             <div data-aos="fade-up-left" className="box">
               <img className="rateIcons" src={badgeImage} />
-              <p className="bigText">Retirement Advisor</p>
+              <p className="bigText mb-[2.5rem]">Retirement Advisor</p>
               <p className="smalls">
                 Don't simply retire from something; have something to retire to.
                 We are here to help you with that.
@@ -40,7 +40,7 @@ export const ThirdSection = () => {
             </div>
             <div data-aos="fade-up-right" className="box">
               <img className="rateIcons" src={boxImage} />
-              <p className="bigText">Tax Consultant</p>
+              <p className="bigText mb-[2.5rem]">Tax Consultant</p>
               <p className="smalls">
                 Wages are only medicine to poverty as you need other source of
                 incomes in order to meet up with your Taxes and that is why you
@@ -49,7 +49,7 @@ export const ThirdSection = () => {
             </div>
             <div data-aos="fade-up-left" className="box">
               <img className="rateIcons" src={serachImage} />
-              <p className="bigText">Financial Strategy</p>
+              <p className="bigText mb-[2.5rem]">Financial Strategy</p>
               <p className="smalls">
                 We all want wealth, but how do we achieve it? It starts with a
                 successful Investment into an Opportunity which no one else

@@ -1,7 +1,7 @@
 import logo from "../assets/navbar/logo_at_nav_bar.png";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import ReCAPTCHA from "react-google-recaptcha";
+
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { loginUserSchema } from "../zod/user";
@@ -130,13 +130,6 @@ export const LoginPage = ({ setNavon }) => {
                       {error.message}
                     </p>
                   </div>
-
-                  {/*Recatpcha Start*/}
-                  <ReCAPTCHA
-                    sitekey="6LemHLUmAAAAAG2FTSlQvH1xQmw-GOqpLk733OJz"
-                    onChange={onChange}
-                  />
-                  {/*Recatpcha End*/}
 
                   <div className="flex items-center justify-between">
                     <div className="flex items-start">

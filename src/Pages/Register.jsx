@@ -242,12 +242,7 @@ export const RegisterPage = ({ setNavon }) => {
                       }}
                     />
                     {/* Error Message Regarding Password  */}
-                    {/*Recatpcha Start*/}
-                    <ReCAPTCHA
-                      sitekey="6LemHLUmAAAAAG2FTSlQvH1xQmw-GOqpLk733OJz"
-                      onChange={onChange}
-                    />
-                    {/*Recatpcha End*/}
+
                     <p className="text-sm text-red-600 font-medium">
                       {error.id === "notEqual" && error.message}
                     </p>
