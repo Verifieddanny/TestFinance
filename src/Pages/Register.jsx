@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/navbar/logo_at_nav_bar.png";
 import { useNavigate } from "react-router-dom";
-
+import ReCAPTCHA from "react-google-recaptcha";
+import { registerUserSchema } from "../zod/user";
+import { toast } from "sonner";
 export const RegisterPage = ({ setNavon }) => {
   useEffect(() => {
     setNavon(true);
@@ -23,19 +25,34 @@ export const RegisterPage = ({ setNavon }) => {
     message: "",
   });
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    setUser({
-      email: "",
-      password: "",
-      name: "",
-      gender: "",
-      confirmPassword: "",
-      agreed: "off",
-    });
-    console.log(user);
 
-    navigate("/dashboard");
+    try {
+      const validData = registerUserSchema.parse(user);
+      const result = await fetch(`https://api.heavisidefinance.online/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(validData),
+      });
+
+      console.log();
+
+      if (result.status !== 200) {
+        const data = await result.json();
+        toast.error(data.error);
+        return;
+      }
+      const data = await result.json();
+
+      localStorage.setItem("token", data.token);
+      toast.success("register success");
+      navigate("/dashboard");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
