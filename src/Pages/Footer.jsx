@@ -47,26 +47,3 @@ export const FooterComponent = () => {
     </footer>
   );
 };
-
-/*
- <ul className="ftChild ul">
-          <li className="text-2xl md:text-3xl font-bold">Get in Touch</li>
-          <li>
-            <Link href="https://www.google.ng/maps/place/State+of+Amazonas,+Brazil/@-3.7048608,-75.6534244,5z/data=!3m1!4b1!4m6!3m5!1s0x92183f5c8b1d6ed1:0x176d6af66b3c2efa!8m2!3d-3.4168427!4d-65.8560646!16zL20vMDFoZGt5?entry=ttu">
-              Location:Heaviside Finance{" "}
-            </Link>
-          </li>
-          <li>
-            <Link
-              className=" dark:text-white  text-gray-800"
-              href="mailto:customer-support@heavisidefinance.online"
-            >
-              customer-support@heavisidefinance.online
-            </Link>
-          </li>
-          <li>
-            <Link href="tel:+000000000000">Phone: +000000000000 </Link>
-          </li>
-        </ul>
-
-*/
