@@ -24,6 +24,10 @@ function App() {
   const [user, setUser] = useState({});
 
   const { data } = useQuery("user", async () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      return;
+    }
     const response = await fetch(`https://api.heavisidefinance.online/user`, {
       method: "GET",
       headers: {
@@ -80,15 +84,15 @@ function App() {
             <Link className="NavLinks" to="/services">
               Services
             </Link>
-            {user.id ? (
-              <div>
+            {!user.id ? (
+              <>
                 <Link className="NavLinks" to="/signup">
                   SignUp
                 </Link>
                 <Link className="NavLinks" to="/login">
                   Login
                 </Link>
-              </div>
+              </>
             ) : (
               <div>
                 <Link className="NavLinks" to="/dashboard">

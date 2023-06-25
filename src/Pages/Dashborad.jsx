@@ -15,16 +15,18 @@ import { FaBtc, FaUserAlt } from "react-icons/fa";
 export const Dashborad = ({ theme, setNavon, setTheme }) => {
   const [total, setTotal] = useState(0);
   const [user, setUser] = useState({});
-  const { isLoading, error, data } = useQuery({
-    queryKey: ["user"],
-    queryFn: () =>
-      fetch(`https://api.heavisidefinance.online/user`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }).then((res) => res.json()),
+  const { isLoading, error, data } = useQuery("user", async () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      return;
+    }
+    return  await fetch(`https://api.heavisidefinance.online/user`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }).then((res) => res.json());
   });
 
   const navigate = useNavigate();
