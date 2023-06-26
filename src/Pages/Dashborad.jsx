@@ -20,7 +20,7 @@ export const Dashborad = ({ theme, setNavon, setTheme }) => {
     if (!token) {
       return;
     }
-    return  await fetch(`https://api.heavisidefinance.online/user`, {
+    return await fetch(`https://api.heavisidefinance.online/user`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

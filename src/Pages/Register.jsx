@@ -30,19 +30,22 @@ export const RegisterPage = ({ setNavon }) => {
 
     try {
       const validData = registerUserSchema.parse(user);
-      const result = await fetch(`https://api.heavisidefinance.online/register`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(validData),
-      });
+      const result = await fetch(
+        `https://api.heavisidefinance.online/register`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(validData),
+        }
+      );
 
       console.log();
 
       if (result.status !== 200) {
         const data = await result.json();
-        toast.error(data.error);
+        toast.error(data.message);
         return;
       }
       const data = await result.json();

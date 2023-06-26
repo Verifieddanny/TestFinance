@@ -19,17 +19,23 @@ export const LoginPage = ({ setNavon }) => {
 
     try {
       const validata = loginUserSchema.parse(user);
-      const response = await fetch(`https://api.heavisidefinance.online/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(validata),
-      });
+      const response = await fetch(
+        `https://api.heavisidefinance.online/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify(validata),
+        }
+      );
+
+      console.log(response);
 
       if (response.status !== 200) {
         const data = await response.json();
-        toast.error(data.error);
+        toast.error(data.message);
         return;
       }
 
