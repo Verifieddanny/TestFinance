@@ -15,7 +15,7 @@ export const TopSectionAbout = () => {
         <img src={pic1} className="SliderImage" />
         <div className=" absolute top-[20%] text-center text-[#ffffff]">
           <p data-aos="fade-down" className=" text-3xl font-bold">
-            Hello! This is TestFinance
+            Hello! This is Heaviside Finance
           </p>
           <h5 data-aos="fade-up" className="text-xl">
             Highly skilled industrial expertise assisting you in meeting your
