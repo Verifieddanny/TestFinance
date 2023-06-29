@@ -333,12 +333,12 @@ const Overflow = ({
           }}
           className="absolute w-full h-full top-0 z-[1]"
         ></main>
-        <div className="px-5 z-[2] py-10 rounded-xl md:w-[60%] w-full text-center text-white  bg-gray-700">
+        <div className="px-1 md:px-5 z-[2] py-10 rounded-xl md:w-[60%] w-full text-center text-white  bg-gray-700">
           <CopyToClipboard text={text}>
             <p className="text-xl font-medium ">
               I'm Sending {amount} {currency} to <br /> <br />
               <span
-                className=" bg-gray-900 rounded-xl p-3 mt-2 text-sm"
+                className=" bg-gray-900 rounded-xl p-3 mt-2 text-xs w-full"
                 onClick={onCopied}
               >
                 {selected === "bitcoin"
@@ -359,7 +359,7 @@ const Overflow = ({
           >
             I've paid.
           </button>
-          <p className="text-sm text-left text-white mt-2">
+          <p className="text-sm text-left text-white mt-4 ">
             click on address to copy address
           </p>
         </div>

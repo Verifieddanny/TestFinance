@@ -25,10 +25,7 @@ const Crypto = ({ theme, setNavon, setTheme }) => {
     if (!token) {
       return;
     }
-    
-     
-
-    });
+  });
 
   useEffect(() => {
     if (!isLoading && !data) {
@@ -47,6 +44,7 @@ const Crypto = ({ theme, setNavon, setTheme }) => {
   useEffect(() => {
     if (selected === "bitcoin") {
       setAmount(Number(value) / prices.btc);
+      console.log(amount);
     } else if (selected === "ethereum") {
       setAmount(Number(value) / prices.eth);
     } else if (selected === "bsc") {
