@@ -113,7 +113,7 @@ function App() {
               }}
               className="grid place-items-center w-full NavLinks"
             >
-              {theme === "dark" ? <BsSun /> : <BsMoon />}
+              {theme === "dark" ? <BsMoon /> : <BsSun />}
             </button>
           </div>
           <button className="menu" onClick={() => setOpen(!open)}>

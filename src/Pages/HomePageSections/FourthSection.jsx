@@ -20,7 +20,7 @@ export const FourthSection = () => {
             COMPREHENSIVE WEALTH MANAGEMENT
           </p>
           <p data-aos="fade-down" className="text-xl mb-[1rem]">
-            At Hightrove Finance, our customers are put first at all times. Your
+            At Heaviside Finance, our customers are put first at all times. Your
             own Client Relationship Officer is there for you every step of the
             way whether you're delving into a specific issue, taking in the big
             picture, or balancing financial opportunities and risks. Our

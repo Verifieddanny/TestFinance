@@ -192,16 +192,15 @@ export const Dashborad = ({ theme, setNavon, setTheme }) => {
             <h1 className="text-xl dark:text-white mb-3 font-medium">
               Hello, {user.name ? user.name : "User"}
             </h1>
-            <div className="grid border-gray-800 rounded p-2 border-dashed border-2 lg:grid-cols-2 gap-4 mb-4 ">
+            <div className="grid border-gray-800 rounded p-2 border-dashed border-2 lg:grid-cols-4 gap-4 mb-4 ">
               {/* Assets value  */}
-
               <div className="flex min-w-[240px] w-full border-gray-500 justify-between border-2 dark:border-0 text-gray-900 dark:text-white p-4 flex-col min-h-24 rounded bg-gray-50 dark:bg-gray-800">
                 <div className="text-lg overflow-ellipsis mb-3">
                   Total Assets Value:
                 </div>
                 <div className="text-2xl mb-3 font-medium">
                   {isLoading ? (
-                    <div className="font-bold text-3xl animate-bounce"> .</div>
+                    <div className="font-bold text-3xl "> $0.00</div>
                   ) : (
                     total
                   )}
@@ -222,9 +221,7 @@ export const Dashborad = ({ theme, setNavon, setTheme }) => {
                   </Link>
                 </div>
               </div>
-
               {/* Staked Assets  */}
-
               <div className="flex min-w-[240px] w-full border-gray-500 justify-between border-2 dark:border-0 text-gray-900 dark:text-white p-4 flex-col min-h-24 rounded bg-gray-50 dark:bg-gray-800">
                 <div className="text-lg overflow-ellipsis mb-3">
                   Staked Assets Value:
@@ -237,9 +234,8 @@ export const Dashborad = ({ theme, setNavon, setTheme }) => {
                   </button>
                 </div>
               </div>
-
               {/* Referrals  */}
-              {/* <div className="flex min-w-[240px] w-full border-gray-500 justify-between border-2 dark:border-0 text-gray-900 dark:text-white p-4 flex-col min-h-24 rounded bg-gray-50 dark:bg-gray-800">
+              <div className="flex min-w-[240px] w-full border-gray-500 justify-between border-2 dark:border-0 text-gray-900 dark:text-white p-4 flex-col min-h-24 rounded bg-gray-50 dark:bg-gray-800">
                 <div className="text-lg overflow-ellipsis mb-3">Referrals:</div>
                 <div className="text-2xl mb-3 font-medium">0</div>
                 <hr />
@@ -248,7 +244,19 @@ export const Dashborad = ({ theme, setNavon, setTheme }) => {
                     Referral
                   </button>
                 </div>
-              </div> */}
+              </div>
+
+              {/* ROI */}
+              <div className="flex min-w-[240px] w-full border-gray-500 justify-between border-2 dark:border-0 text-gray-900 dark:text-white p-4 flex-col min-h-24 rounded bg-gray-50 dark:bg-gray-800">
+                <div className="text-lg overflow-ellipsis mb-3">ROI:</div>
+                <div className="text-2xl mb-3 font-medium">0%</div>
+                <hr />
+                <div className="flex items-center gap-3">
+                  {/* <button className="bg-green-100 mt-3 px-3 py-1 rounded hover:bg-zinc-600  hover:text-white dark:hover:text-white dark:text-gray-900 ">
+                    Referral
+                  </button> */}
+                </div>
+              </div>
             </div>
           </div>
         </div>
