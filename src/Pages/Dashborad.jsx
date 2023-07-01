@@ -255,12 +255,14 @@ export const Dashborad = ({ theme, setNavon, setTheme }) => {
                 <div className="text-2xl mb-3 font-medium">0</div>
                 <hr />
                 <div className="flex items-center gap-3">
-                  <CopyToClipboard text="Referral link goes in here">
+                  <CopyToClipboard
+                    text={`https://heavisidefinance.com/signup?ref=${user?.id}`}
+                  >
                     <button
-                      className="bg-green-100 mt-3 px-3 py-1 rounded hover:bg-zinc-600  hover:text-white dark:hover:text-white dark:text-gray-900 w-full"
+                      className="bg-green-100 mt-3 px-3 overflow-x-scroll py-1 rounded hover:bg-zinc-600  hover:text-white dark:hover:text-white dark:text-gray-900 w-full"
                       onClick={onCopied}
                     >
-                      Referral Links goes in here
+                      {`https://heavisidefinance.com/signup?ref=${user?.id}`}
                     </button>
                   </CopyToClipboard>
                   <ToastContainer
