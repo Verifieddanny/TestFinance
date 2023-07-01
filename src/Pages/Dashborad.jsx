@@ -11,6 +11,9 @@ import {
   BsUpload,
 } from "react-icons/bs";
 import { FaBtc, FaUserAlt } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 export const Dashborad = ({ theme, setNavon, setTheme }) => {
   const [total, setTotal] = useState(0);
@@ -50,6 +53,18 @@ export const Dashborad = ({ theme, setNavon, setTheme }) => {
     setNavon(false);
   }, []);
 
+  const onCopied = () => {
+    toast("Copied! 🔗", {
+      position: "top-center",
+      autoClose: 500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
   return (
     <>
       {/* Header  */}
@@ -240,9 +255,26 @@ export const Dashborad = ({ theme, setNavon, setTheme }) => {
                 <div className="text-2xl mb-3 font-medium">0</div>
                 <hr />
                 <div className="flex items-center gap-3">
-                  <button className="bg-green-100 mt-3 px-3 py-1 rounded hover:bg-zinc-600  hover:text-white dark:hover:text-white dark:text-gray-900 ">
-                    Referral
-                  </button>
+                  <CopyToClipboard text="Referral link goes in here">
+                    <button
+                      className="bg-green-100 mt-3 px-3 py-1 rounded hover:bg-zinc-600  hover:text-white dark:hover:text-white dark:text-gray-900 w-full"
+                      onClick={onCopied}
+                    >
+                      Referral Links goes in here
+                    </button>
+                  </CopyToClipboard>
+                  <ToastContainer
+                    position="top-center"
+                    autoClose={500}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="dark"
+                  />
                 </div>
               </div>
 
