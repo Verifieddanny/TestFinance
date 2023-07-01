@@ -27,7 +27,7 @@ export const FooterComponent = () => {
         <ul className="ftChild ul text-left">
           <li className="text-2xl md:text-3xl font-bold">Get in Touch</li>
           <li>
-            <a href="https://www.google.ng/maps/place/State+of+Amazonas,+Brazil/@-3.7048608,-75.6534244,5z/data=!3m1!4b1!4m6!3m5!1s0x92183f5c8b1d6ed1:0x176d6af66b3c2efa!8m2!3d-3.4168427!4d-65.8560646!16zL20vMDFoZGt5?entry=ttu">
+            <a href="https://www.google.com/maps/place/300-600+E+Rio+Salado+Pkwy,+Tempe,+AZ+85281,+USA/@33.4304878,-111.9347183,17z/data=!3m1!4b1!4m6!3m5!1s0x872b0920fe24e517:0xfced217c7c830a48!8m2!3d33.4299188!4d-111.9317553!16s%2Fg%2F11c53mzwh7?entry=ttu">
               Location: Heaviside Finance
             </a>
           </li>
