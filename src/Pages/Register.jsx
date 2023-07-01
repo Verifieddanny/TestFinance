@@ -6,12 +6,20 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { registerUserSchema } from "../zod/user";
 import { toast } from "sonner";
 import VerifyMailModal from "./VerifyMailModal";
+import { useLocation } from "react-router-dom";
+
 export const RegisterPage = ({ setNavon }) => {
   useEffect(() => {
     setNavon(true);
   }, []);
   const onChange = () => {};
   const navigate = useNavigate();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+
+  // User ID of who referred, Returns null if nobody referred
+  const refValue = queryParams.get("ref");
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [user, setUser] = useState({
