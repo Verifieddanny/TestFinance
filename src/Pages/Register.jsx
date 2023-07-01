@@ -38,7 +38,7 @@ export const RegisterPage = ({ setNavon }) => {
       setRefId(refValue);
     }
 
-    console.log(savedId);
+
   }, []);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -83,6 +83,7 @@ export const RegisterPage = ({ setNavon }) => {
       setIsModalOpen(true);
       localStorage.setItem("token", data.token);
       toast.success("register success");
+      localStorage.removeItem("ref")
       navigate("/dashboard");
     } catch (error) {
       console.log(error);
