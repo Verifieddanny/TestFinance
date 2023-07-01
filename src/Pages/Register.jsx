@@ -20,6 +20,27 @@ export const RegisterPage = ({ setNavon }) => {
   // User ID of who referred, Returns null if nobody referred
   const refValue = queryParams.get("ref");
 
+  // The real userID to work with.
+  const [refId, setRefId] = useState(null);
+
+  useEffect(() => {
+    const savedId = localStorage.getItem("ref");
+
+    if (refValue === null && savedId === null) {
+      setRefId(null);
+    } else if (refValue === null && savedId !== null) {
+      setRefId(savedId);
+    } else if (refValue !== null && savedId !== null) {
+      localStorage.setItem("ref", refValue);
+      setRefId(refValue);
+    } else if (refValue !== null && savedId === null) {
+      localStorage.setItem("ref", refValue);
+      setRefId(refValue);
+    }
+
+    console.log(savedId);
+  }, []);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [user, setUser] = useState({
@@ -113,6 +134,9 @@ export const RegisterPage = ({ setNavon }) => {
                         className="dark:bg-gray-50 border dark:border-gray-300 dark:text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 dark:placeholder-gray-400 text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="e.g John Doe"
                         value={user.name}
+                        onClick={() => {
+                          console.log(refId);
+                        }}
                         required
                         onChange={(e) => {
                           setUser((prev) => {
