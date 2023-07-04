@@ -79,9 +79,6 @@ export const RegisterPage = ({ setNavon }) => {
       }
       const data = await result.json();
       setIsModalOpen(true);
-      localStorage.setItem("token", data.token);
-      toast.success("register success");
-      navigate("/dashboard");
     } catch (error) {
       console.log(error);
     }
