@@ -37,7 +37,7 @@ export const Dashborad = ({ theme, setNavon, setTheme }) => {
   useEffect(() => {
     if (!isLoading && !data) {
       // navigate to login
-      // navigate("/login");
+      navigate("/login");
     }
 
     if (!isLoading && data) {
