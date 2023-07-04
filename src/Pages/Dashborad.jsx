@@ -37,7 +37,7 @@ export const Dashborad = ({ theme, setNavon, setTheme }) => {
   useEffect(() => {
     if (!isLoading && !data) {
       // navigate to login
-      navigate("/login");
+      // navigate("/login");
     }
 
     if (!isLoading && data) {
@@ -185,8 +185,11 @@ export const Dashborad = ({ theme, setNavon, setTheme }) => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/login"
+                <button
+                  onClick={() => {
+                    localStorage.removeItem("token");
+                    navigate("/login");
+                  }}
                   className={`flex w-full items-center p-2 text-gray-900 rounded-lg  dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700`}
                 >
                   <div>
@@ -194,7 +197,7 @@ export const Dashborad = ({ theme, setNavon, setTheme }) => {
                   </div>
 
                   <span className="ml-3">Sign Out</span>
-                </Link>
+                </button>
               </li>
             </ul>
           </div>

@@ -1,7 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
-const VerifyMailModal = ({ isModalOpen, setIsModalOpen }) => {
+const VerifyMailModal = ({ isModalOpen, setIsModalOpen, token, email }) => {
+  const [value, setValue] = useState("");
+  const navigate = useNavigate();
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    localStorage.setItem("token", token);
+    toast.success("register success");
+    navigate("/dashboard");
+  };
+
   return (
     <div
       className={` ${
@@ -14,7 +25,7 @@ const VerifyMailModal = ({ isModalOpen, setIsModalOpen }) => {
             <h3 className="mb-4 text-center text-xl font-medium text-gray-900 dark:text-white">
               Verify Email Address
             </h3>
-            <form className="space-y-6" action="#">
+            <form onSubmit={onSubmit} className="space-y-6" action="#">
               <div>
                 <label
                   htmlFor="password"
@@ -25,6 +36,10 @@ const VerifyMailModal = ({ isModalOpen, setIsModalOpen }) => {
                 <input
                   type="number"
                   name="code"
+                  onChange={(e) => {
+                    setValue(Number(e.target.value));
+                  }}
+                  value={value}
                   placeholder="••••••••"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                   required
