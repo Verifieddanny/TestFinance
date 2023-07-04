@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
-const VerifyMailModal = ({ isModalOpen, setIsModalOpen, token, email }) => {
+const VerifyMailModal = ({ isModalOpen, setIsModalOpen, email }) => {
   const [value, setValue] = useState("");
   const navigate = useNavigate();
 
   const onSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("token", token);
     toast.success("register success");
     navigate("/dashboard");
   };

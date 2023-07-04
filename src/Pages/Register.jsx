@@ -9,7 +9,6 @@ import VerifyMailModal from "./VerifyMailModal";
 import { useLocation } from "react-router-dom";
 
 export const RegisterPage = ({ setNavon }) => {
-  const [token, setToken] = useState("");
   useEffect(() => {
     setNavon(true);
   }, []);
@@ -82,7 +81,6 @@ export const RegisterPage = ({ setNavon }) => {
       }
       const data = await result.json();
       setIsModalOpen(true);
-      setToken(data.token);
     } catch (error) {
       console.log(error);
     }
@@ -93,7 +91,6 @@ export const RegisterPage = ({ setNavon }) => {
       <VerifyMailModal
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
-        token={token}
         email={user.email}
       />
       <div>
