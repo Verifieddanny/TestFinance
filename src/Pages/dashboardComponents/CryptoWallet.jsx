@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/navbar/logo_at_nav_bar.png";
 import {
   BsDoorOpen,
@@ -18,6 +18,7 @@ const Crypto = ({ theme, setNavon, setTheme }) => {
   const [selected, setSelected] = useState("bitcoin");
   const [value, setValue] = useState(0);
   const [amount, setAmount] = useState(0);
+  const navigate = useNavigate();
 
   const [user, setUser] = useState({});
   const { isLoading, error, data } = useQuery("user", async () => {
@@ -187,8 +188,11 @@ const Crypto = ({ theme, setNavon, setTheme }) => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/login"
+                <button
+                  onClick={() => {
+                    localStorage.removeItem("token");
+                    navigate("/login");
+                  }}
                   className={`flex w-full items-center p-2 text-gray-900 rounded-lg  dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700`}
                 >
                   <div>
@@ -196,7 +200,7 @@ const Crypto = ({ theme, setNavon, setTheme }) => {
                   </div>
 
                   <span className="ml-3">Sign Out</span>
-                </Link>
+                </button>
               </li>
             </ul>
           </div>

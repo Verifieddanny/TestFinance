@@ -37,8 +37,6 @@ export const RegisterPage = ({ setNavon }) => {
       localStorage.setItem("ref", refValue);
       setRefId(refValue);
     }
-
-
   }, []);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -81,10 +79,6 @@ export const RegisterPage = ({ setNavon }) => {
       }
       const data = await result.json();
       setIsModalOpen(true);
-      localStorage.setItem("token", data.token);
-      toast.success("register success");
-      localStorage.removeItem("ref")
-      navigate("/dashboard");
     } catch (error) {
       console.log(error);
     }
@@ -95,6 +89,7 @@ export const RegisterPage = ({ setNavon }) => {
       <VerifyMailModal
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
+        email={user.email}
       />
       <div>
         <main className="">
