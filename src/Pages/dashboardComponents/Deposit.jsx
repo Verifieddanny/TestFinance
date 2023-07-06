@@ -324,6 +324,8 @@ const Overflow = ({
   text,
   onCopied,
 }) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <section
@@ -357,7 +359,20 @@ const Overflow = ({
           </CopyToClipboard>
           <button
             onClick={() => {
-              setDisplay(false);
+              toast("Payment is being confirmed.....", {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+              });
+
+              setTimeout(() => {
+                navigate("/dashboard");
+              }, 3000);
             }}
             className="text-lg mt-5 rounded-lg font-medium bg-green-500 text-white px-3 py-1 "
           >
